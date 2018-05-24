@@ -15,23 +15,31 @@ Viennoiserie.prototype = new Produit();
 Viennoiserie.prototype.constructor = Viennoiserie;
 Viennoiserie.prototype.prix = 0.80;
 Viennoiserie.prototype.frais = true;
-Viennoiserie.prototype.nom = Viennoiserie;
 function Viennoiserie(nom, prix, frais){
-    this.nom = 'pain au raisin';
+    // this.nom = 'pain au raisin';
     // this.prix = 0.80;
     // this.frais = true;
 }
 
-var cookie = new Viennoiserie();
+var brownie = {
+    frais : true,
+    prix : 1.5, 
+}
+console.log(brownie.frais)
+console.log(brownie.prix)
+
+var cookie = new Viennoiserie('cookie');
 cookie.frais = true;
 cookie.prix = 1;
 console.log(cookie);
+var donut = new Viennoiserie('donut');
+console.log(donut);
 
   function panier(){
       this.cart = [];
     // this.nombreProduits = cart.length
     this.totalHT += produit.prix;
-    this.totalTTC += produit.prix * 0.055;
+    this.totalTTC = produit.prix * 0.055;
     this.ajoute = function(produit){
         this.cart.push(produit);
     }
@@ -40,6 +48,8 @@ console.log(cookie);
     }
     this.totalHT = 0;
     this.totalTTC = 0;
+    console.log(totalHT)
+    console.log(totalTTC)
   }
 
   
