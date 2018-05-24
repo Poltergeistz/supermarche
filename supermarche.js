@@ -38,13 +38,13 @@ console.log(donut);
   function panier(){
       this.cart = [];
     // this.nombreProduits = cart.length
-    this.totalHT += produit.prix;
-    this.totalTTC = produit.prix * 0.055;
+    this.totalHT += Produit.prix;
+    this.totalTTC = Produit.prix * 0.055;
     this.ajoute = function(produit){
-        this.cart.push(produit);
+        this.cart.push(Produit);
     }
     this.retire = function(produit){
-        this.cart.shift(produit) 
+        this.cart.shift(Produit) 
     }
     this.totalHT = 0;
     this.totalTTC = 0;
@@ -53,7 +53,7 @@ console.log(donut);
   }
 
   
-  var panier1 = new Panier(produit, totalHT, totalTTC);
+  var panier1 = new Panier(Produit, totalHT, totalTTC);
   panier.ajoute(baguette);
   console.log("baguette",panier);
   panier.ajoute(croissant);
