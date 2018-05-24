@@ -1,7 +1,21 @@
-function Produit(nom, prix) {
+ var Produit = function(nom, prix) {
     this.nom = nom;
     this.prix = prix;
   }
+
+  /*var baguette = {
+      nom = 'Baguette',
+      prix = 0.85
+  }
+
+  var croissant = {
+      nom = 'Croissant',
+      prix = 0.80
+  }
+
+  var choco = new Produit()
+  choco.prix = 1;
+  */
   
   var baguette = new Produit( 'Baguette', 0.85); // prix HT
   var croissant = new Produit( 'Croissant', 0.80);
@@ -15,25 +29,26 @@ Viennoiserie.prototype = new Produit();
 Viennoiserie.prototype.constructor = Viennoiserie;
 Viennoiserie.prototype.prix = 0.80;
 Viennoiserie.prototype.frais = true;
-function Viennoiserie(nom, prix, frais){
-    // this.nom = 'pain au raisin';
-    // this.prix = 0.80;
-    // this.frais = true;
-}
 
-var brownie = {
-    frais : true,
-    prix : 1.5, 
+// constructeur Viennoiserie
+function Viennoiserie(nom, prix, frais){
+    this.nom = nom;
+    this.prix = prix;
+    this.frais = frais;
 }
-console.log(brownie.frais)
-console.log(brownie.prix)
 
 var cookie = new Viennoiserie('cookie');
 cookie.frais = true;
 cookie.prix = 1;
 console.log(cookie);
 var donut = new Viennoiserie('donut');
+donut.prix = 1.5;
+donut.frais = true;
 console.log(donut);
+var brownie = new Viennoiserie('brownie')
+brownie.prix = 1.5;
+brownie.frais = true;
+console.log(brownie);
 
   function panier(){
       this.cart = [];
